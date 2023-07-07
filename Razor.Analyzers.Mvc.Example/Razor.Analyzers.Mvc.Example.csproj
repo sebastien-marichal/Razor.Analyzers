@@ -6,13 +6,13 @@
         <ImplicitUsings>enable</ImplicitUsings>
     </PropertyGroup>
 
-    <ItemGroup>
-        <Analyzer Include="C:\projects\Razor.Analyzers\Razor.Analyzers.PoC\bin\Debug\netstandard2.0\Razor.Analyzers.PoC.dll" />
-    </ItemGroup>
+<!--    <ItemGroup>-->
+<!--        <Analyzer Include="C:\projects\Razor.Analyzers\Razor.Analyzers.PoC\bin\Debug\netstandard2.0\Razor.Analyzers.PoC.dll" />-->
+<!--    </ItemGroup>-->
 
-    <ItemGroup>
-      <ProjectReference Include="..\Razor.Analyzers.PoC\Razor.Analyzers.PoC.csproj" />
-    </ItemGroup>
+<!--    <ItemGroup>-->
+<!--      <ProjectReference Include="..\Razor.Analyzers.PoC\Razor.Analyzers.PoC.csproj" />-->
+<!--    </ItemGroup>-->
 
 <!--    <Target Name="BuildMSBuildTask" BeforeTargets="PreBuildEvent">-->
 <!--        <MSBuild Projects="$(SolutionDir)\Razor.Analyzers.PoC\Razor.Analyzers.PoC.csproj" Properties="Configuration=$(Configuration)" />-->

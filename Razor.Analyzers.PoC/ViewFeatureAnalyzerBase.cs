@@ -24,6 +24,7 @@ public abstract class ViewFeatureAnalyzerBase : DiagnosticAnalyzer
         context.EnableConcurrentExecution();
         context.ConfigureGeneratedCodeAnalysis(GeneratedCodeAnalysisFlags.Analyze |
                                                GeneratedCodeAnalysisFlags.ReportDiagnostics);
+
         context.RegisterCompilationStartAction(context =>
         {
             var analyzerContext = new ViewFeaturesAnalyzerContext(context);

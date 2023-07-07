@@ -6,6 +6,7 @@ public class TestClass
 
     void Method()
     {
+        // Should not raise sine Microsoft.AspNetCore.Mvc.Rendering.IHtmlHelper is not in the Assembly 
         this.Model = "test";
     }
 }
