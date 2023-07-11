@@ -11,6 +11,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Razor.Analyzers.ClassLib.Ex
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Razor.Analysers.Blazor.Example", "Razor.Analysers.Blazor.Example\Razor.Analysers.Blazor.Example.csproj", "{4FB28FAE-7BB9-4FF9-9803-54E0E6596D09}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Razor.Analyzers.Razor.Example", "Razor.Analyzers.Razor.Example\Razor.Analyzers.Razor.Example.csproj", "{CFD65237-8C4B-4487-A023-2312F778E42E}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -36,5 +38,9 @@ Global
 		{4FB28FAE-7BB9-4FF9-9803-54E0E6596D09}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4FB28FAE-7BB9-4FF9-9803-54E0E6596D09}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4FB28FAE-7BB9-4FF9-9803-54E0E6596D09}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CFD65237-8C4B-4487-A023-2312F778E42E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CFD65237-8C4B-4487-A023-2312F778E42E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CFD65237-8C4B-4487-A023-2312F778E42E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CFD65237-8C4B-4487-A023-2312F778E42E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
