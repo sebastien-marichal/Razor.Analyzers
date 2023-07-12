@@ -21,6 +21,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Razor.Analyzers.Mvc.Net5.Ex
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Razor.Analyzers.Blazor.Net5.Example", "Razor.Analyzers.Blazor.Net5.Example\Razor.Analyzers.Blazor.Net5.Example.csproj", "{262B58B6-9F63-443F-926D-9D7A25036EF5}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Razor.Analyzers.Razor.Net5.Example", "Razor.Analyzers.Razor.Net5.Example\Razor.Analyzers.Razor.Net5.Example.csproj", "{3D9677E6-FBB8-4D3D-9ACC-71DCBFE9B5F2}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -58,6 +60,10 @@ Global
 		{262B58B6-9F63-443F-926D-9D7A25036EF5}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{262B58B6-9F63-443F-926D-9D7A25036EF5}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{262B58B6-9F63-443F-926D-9D7A25036EF5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3D9677E6-FBB8-4D3D-9ACC-71DCBFE9B5F2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3D9677E6-FBB8-4D3D-9ACC-71DCBFE9B5F2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3D9677E6-FBB8-4D3D-9ACC-71DCBFE9B5F2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3D9677E6-FBB8-4D3D-9ACC-71DCBFE9B5F2}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{4FB28FAE-7BB9-4FF9-9803-54E0E6596D09} = {B93E629A-58A9-4661-BF7B-F89225B87397}
@@ -67,5 +73,6 @@ Global
 		{90391480-80A1-4FC3-912A-149007D60FBA} = {443BF1A9-0D23-4FF8-B16B-9F0BF5493482}
 		{9CDA72EF-6251-4B77-8AEF-965403024BAE} = {B93E629A-58A9-4661-BF7B-F89225B87397}
 		{262B58B6-9F63-443F-926D-9D7A25036EF5} = {B93E629A-58A9-4661-BF7B-F89225B87397}
+		{3D9677E6-FBB8-4D3D-9ACC-71DCBFE9B5F2} = {B93E629A-58A9-4661-BF7B-F89225B87397}
 	EndGlobalSection
 EndGlobal
