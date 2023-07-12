@@ -4,9 +4,9 @@ public class TestClass
 {
     public string? Model { get; set; }
 
-    void Method()
+    public void Method()
     {
-        // Should not raise sine Microsoft.AspNetCore.Mvc.Rendering.IHtmlHelper is not in the Assembly 
+        // Should not raise sine Microsoft.AspNetCore.Mvc.Rendering.IHtmlHelper is not in the Assembly
         this.Model = "test";
     }
 }

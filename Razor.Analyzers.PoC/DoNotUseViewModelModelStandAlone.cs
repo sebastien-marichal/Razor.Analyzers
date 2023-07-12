@@ -10,44 +10,35 @@ namespace Razor.Analyzers.PoC;
 [DiagnosticAnalyzer(LanguageNames.CSharp)]
 public class DoNotUseViewModelModelStandAlone : DiagnosticAnalyzer
 {
-    protected const string DiagnosticId = "SM0005";
+    private const string DiagnosticId = "SM0005";
 
-    private static DiagnosticDescriptor Rule = new(DiagnosticId, "XXX", @"[SM0005] [{0}] ""{1}"" member access",
+    private static readonly DiagnosticDescriptor Rule = new(DiagnosticId, "XXX", @"[SM0005] [{0}] ""{1}"" member access",
         "Razor", DiagnosticSeverity.Warning,
         true);
 
     public override void Initialize(AnalysisContext context)
     {
         context.EnableConcurrentExecution();
-        context.ConfigureGeneratedCodeAnalysis(GeneratedCodeAnalysisFlags.Analyze |
-                                               GeneratedCodeAnalysisFlags.ReportDiagnostics);
+        context.ConfigureGeneratedCodeAnalysis(GeneratedCodeAnalysisFlags.Analyze | GeneratedCodeAnalysisFlags.ReportDiagnostics);
 
         FromSyntaxNode(context);
         FromCompilationStart(context);
     }
 
-    private static void FromCompilationStart(AnalysisContext context)
-    {
+    private static void FromCompilationStart(AnalysisContext context) =>
         context.RegisterCompilationStartAction(ctx =>
         {
-            ctx.RegisterSyntaxNodeAction(analysisContext => ReportDiagnostic(analysisContext, "CompilationStart"),
-                SyntaxKind.SimpleMemberAccessExpression);
+            ctx.RegisterSyntaxNodeAction(analysisContext => ReportDiagnostic(analysisContext, "CompilationStart"), SyntaxKind.SimpleMemberAccessExpression);
         });
-    }
 
-    private static void FromSyntaxNode(AnalysisContext context)
-    {
-        context.RegisterSyntaxNodeAction(analysisContext => ReportDiagnostic(analysisContext, "SyntaxNode"),
-            SyntaxKind.SimpleMemberAccessExpression);
-    }
+    private static void FromSyntaxNode(AnalysisContext context) =>
+        context.RegisterSyntaxNodeAction(analysisContext => ReportDiagnostic(analysisContext, "SyntaxNode"), SyntaxKind.SimpleMemberAccessExpression);
 
     private static void ReportDiagnostic(SyntaxNodeAnalysisContext ctx, string actionName)
     {
-        if (ctx.Node is MemberAccessExpressionSyntax memberAccess &&
-            memberAccess.Name.Identifier.ToString().Contains("Model"))
+        if (ctx.Node is MemberAccessExpressionSyntax memberAccess && memberAccess.Name.Identifier.ToString().Contains("Model"))
         {
-            ctx.ReportDiagnostic(Diagnostic.Create(Rule, memberAccess.Name.Identifier.GetLocation(), actionName,
-                memberAccess.Name.Identifier.ToString()));
+            ctx.ReportDiagnostic(Diagnostic.Create(Rule, memberAccess.Name.Identifier.GetLocation(), actionName, memberAccess.Name.Identifier.ToString()));
         }
     }
 

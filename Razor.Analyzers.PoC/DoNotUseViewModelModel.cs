@@ -9,12 +9,11 @@ namespace Razor.Analyzers.PoC;
 [DiagnosticAnalyzer(LanguageNames.CSharp)]
 public class DoNotUseViewModelModel : ViewFeatureAnalyzerBase
 {
-    protected const string DiagnosticId = "SM0001";
+    private const string DiagnosticId = "SM0001";
 
-    private static DiagnosticDescriptor rule = new(DiagnosticId, "XXX", "{0}", "Razor", DiagnosticSeverity.Warning,
-        true);
+    private static readonly DiagnosticDescriptor Rule = new(DiagnosticId, "XXX", "{0}", "Razor", DiagnosticSeverity.Warning, true);
 
-    public DoNotUseViewModelModel() : base(rule) { }
+    public DoNotUseViewModelModel() : base(Rule) { }
 
     protected override void InitializeWorker(ViewFeaturesAnalyzerContext analyzerContext)
     {

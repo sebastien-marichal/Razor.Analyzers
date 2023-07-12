@@ -9,10 +9,10 @@ namespace Razor.Analyzers.PoC;
 
 public abstract class ViewFeatureAnalyzerBase : DiagnosticAnalyzer
 {
-    public ViewFeatureAnalyzerBase(DiagnosticDescriptor diagnosticDescriptor)
+    protected ViewFeatureAnalyzerBase(DiagnosticDescriptor diagnosticDescriptor)
     {
         SupportedDiagnostic = diagnosticDescriptor;
-        SupportedDiagnostics = ImmutableArray.Create(new[] { SupportedDiagnostic });
+        SupportedDiagnostics = ImmutableArray.Create(SupportedDiagnostic);
     }
 
     protected DiagnosticDescriptor SupportedDiagnostic { get; }
@@ -25,9 +25,9 @@ public abstract class ViewFeatureAnalyzerBase : DiagnosticAnalyzer
         context.ConfigureGeneratedCodeAnalysis(GeneratedCodeAnalysisFlags.Analyze |
                                                GeneratedCodeAnalysisFlags.ReportDiagnostics);
 
-        context.RegisterCompilationStartAction(context =>
+        context.RegisterCompilationStartAction(compilationContext =>
         {
-            var analyzerContext = new ViewFeaturesAnalyzerContext(context);
+            var analyzerContext = new ViewFeaturesAnalyzerContext(compilationContext);
 
             // Only do work if we can locate IHtmlHelper.
             // Help identity if we are in Mvc application project
