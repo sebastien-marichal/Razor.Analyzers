@@ -1,0 +1,1 @@
+﻿<%@ Application Codebehind="Global.asax.cs" Inherits="Razor.Analyzers.Mcv.NetFx48.Example.MvcApplication" Language="C#" %>

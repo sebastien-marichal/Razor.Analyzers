@@ -1,0 +1,15 @@
+﻿@model Razor.Analyzers.Mcv.NetFx48.Example.Models.TestModel
+@{
+    ViewBag.Title = "About";
+    Model.Name = "Test"; // Noncompliant
+}
+
+@if (!string.IsNullOrWhiteSpace(Model.Name))
+{
+    <h2>@Model.Name</h2>
+}
+
+<h2>@ViewBag.Title.</h2>
+<h3>@ViewBag.Message</h3>
+
+<p>Use this area to provide additional information.</p>
