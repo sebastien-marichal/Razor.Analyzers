@@ -5,13 +5,13 @@ VisualStudioVersion = 17.0.31903.59
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Razor.Analyzers.PoC", "Razor.Analyzers.PoC\Razor.Analyzers.PoC.csproj", "{90391480-80A1-4FC3-912A-149007D60FBA}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Razor.Analyzers.Mvc.Example", "Razor.Analyzers.Mvc.Example\Razor.Analyzers.Mvc.Example.csproj", "{25132CD2-BA4F-4E0A-B3AE-5CCCCF9427FD}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Razor.Analyzers.Mvc.Net7.Example", "Razor.Analyzers.Mvc.Net7.Example\Razor.Analyzers.Mvc.Net7.Example.csproj", "{25132CD2-BA4F-4E0A-B3AE-5CCCCF9427FD}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Razor.Analyzers.ClassLib.Example", "Razor.Analyzers.ClassLib.Example\Razor.Analyzers.ClassLib.Example.csproj", "{37EA6EC7-BF3B-494B-8C54-ADDF38BDF442}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Razor.Analysers.Blazor.Example", "Razor.Analysers.Blazor.Example\Razor.Analysers.Blazor.Example.csproj", "{4FB28FAE-7BB9-4FF9-9803-54E0E6596D09}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Razor.Analysers.Blazor.Net7.Example", "Razor.Analysers.Blazor.Net7.Example\Razor.Analysers.Blazor.Net7.Example.csproj", "{4FB28FAE-7BB9-4FF9-9803-54E0E6596D09}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Razor.Analyzers.Razor.Example", "Razor.Analyzers.Razor.Example\Razor.Analyzers.Razor.Example.csproj", "{CFD65237-8C4B-4487-A023-2312F778E42E}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Razor.Analyzers.Razor.Net7.Example", "Razor.Analyzers.Razor.Net7.Example\Razor.Analyzers.Razor.Net7.Example.csproj", "{CFD65237-8C4B-4487-A023-2312F778E42E}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Samples", "Samples", "{B93E629A-58A9-4661-BF7B-F89225B87397}"
 EndProject
