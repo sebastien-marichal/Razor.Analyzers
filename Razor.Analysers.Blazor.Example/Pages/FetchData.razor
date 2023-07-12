@@ -40,8 +40,11 @@ else
 @code {
     private WeatherForecast[]? forecasts;
 
+    private int Model = 42;
+
     protected override async Task OnInitializedAsync()
     {
+        this.Model = 21;
         forecasts = await ForecastService.GetForecastAsync(DateOnly.FromDateTime(DateTime.Now));
     }
 }
