@@ -1,4 +1,4 @@
-namespace Razor.Analysers.Blazor.Example.Data;
+namespace Razor.Analysers.Blazor.Net7.Example.Data;
 
 public class WeatherForecastService
 {

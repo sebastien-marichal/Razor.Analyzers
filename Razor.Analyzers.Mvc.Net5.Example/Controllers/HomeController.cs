@@ -1,13 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Diagnostics;
-using System.Linq;
-using System.Threading.Tasks;
+﻿using System.Diagnostics;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
-using Razor.Analyzers.Mvc5.Example.Models;
+using Razor.Analyzers.Mvc.Net5.Example.Models;
 
-namespace Razor.Analyzers.Mvc5.Example.Controllers
+namespace Razor.Analyzers.Mvc.Net5.Example.Controllers
 {
     public class HomeController : Controller
     {

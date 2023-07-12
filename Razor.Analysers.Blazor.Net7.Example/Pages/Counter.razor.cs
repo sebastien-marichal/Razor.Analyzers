@@ -1,4 +1,4 @@
-namespace Razor.Analysers.Blazor.Example.Pages
+namespace Razor.Analysers.Blazor.Net7.Example.Pages
 {
     public partial class Counter
     {

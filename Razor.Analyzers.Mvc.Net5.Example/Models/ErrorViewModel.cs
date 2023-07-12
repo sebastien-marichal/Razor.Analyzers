@@ -1,6 +1,4 @@
-using System;
-
-namespace Razor.Analyzers.Mvc5.Example.Models
+namespace Razor.Analyzers.Mvc.Net5.Example.Models
 {
     public class ErrorViewModel
     {

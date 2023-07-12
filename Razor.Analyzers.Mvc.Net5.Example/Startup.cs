@@ -9,7 +9,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 
-namespace Razor.Analyzers.Mvc5.Example
+namespace Razor.Analyzers.Mvc.Net5.Example
 {
     public class Startup
     {

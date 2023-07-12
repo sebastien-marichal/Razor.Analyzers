@@ -1,4 +1,4 @@
-namespace Razor.Analyzers.Mvc.Example.Models;
+namespace Razor.Analyzers.Mvc.Net7.Example.Models;
 
 public class ErrorViewModel
 {

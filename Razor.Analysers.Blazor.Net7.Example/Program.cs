@@ -1,4 +1,4 @@
-using Razor.Analysers.Blazor.Example.Data;
+using Razor.Analysers.Blazor.Net7.Example.Data;
 
 var builder = WebApplication.CreateBuilder(args);
 
