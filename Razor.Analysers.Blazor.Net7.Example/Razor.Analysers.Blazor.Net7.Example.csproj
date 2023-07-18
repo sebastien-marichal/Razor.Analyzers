@@ -9,4 +9,18 @@
   <ItemGroup>
     <ProjectReference Include="..\Razor.Analyzers.PoC\Razor.Analyzers.PoC.csproj" OutputItemType="Analyzer" ReferenceOutputAssembly="false" SetTargetFramework="TargetFramework=netstandard2.0" />
   </ItemGroup>
+
+  <ItemGroup>
+    <Content Include=".\**\*g.cs">
+      <Link>Generated\%(Filename)%(Extension)</Link>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Content>
+    <Content Update="Pages\Counter.razor">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.Razor.Language" Version="6.0.20" />
+  </ItemGroup>
 </Project>

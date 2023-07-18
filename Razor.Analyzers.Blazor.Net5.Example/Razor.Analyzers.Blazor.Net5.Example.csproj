@@ -7,4 +7,8 @@
     <ItemGroup>
         <ProjectReference Include="..\Razor.Analyzers.PoC\Razor.Analyzers.PoC.csproj" OutputItemType="Analyzer" ReferenceOutputAssembly="false" SetTargetFramework="TargetFramework=netstandard2.0" />
     </ItemGroup>
+
+    <ItemGroup>
+      <ReferencePathWithRefAssemblies Update="C:\Program Files\dotnet\packs\Microsoft.AspNetCore.App.Ref\5.0.0\ref\net5.0\Microsoft.AspNetCore.Razor.dll" />
+    </ItemGroup>
 </Project>

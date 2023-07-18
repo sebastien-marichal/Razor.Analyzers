@@ -1,6 +1,13 @@
 {
   "version": 1,
   "dependencies": {
-    "net7.0": {}
+    "net7.0": {
+      "Microsoft.AspNetCore.Razor.Language": {
+        "type": "Direct",
+        "requested": "[6.0.20, )",
+        "resolved": "6.0.20",
+        "contentHash": "kk+bqzne4/RXX+JzZHdHu7fhEXaKtICJe+NVE6agTg4N4r9SbgErRrB99VTo5pWcEfS7tAhU6dVk7izTOmf8VA=="
+      }
+    }
   }
 }
