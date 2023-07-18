@@ -13,4 +13,8 @@
       <PackageReference Include="Microsoft.CodeAnalysis.Workspaces.MSBuild" Version="4.6.0" />
     </ItemGroup>
 
+    <ItemGroup>
+      <ProjectReference Include="..\Razor.Analyzers.PoC\Razor.Analyzers.PoC.csproj" />
+    </ItemGroup>
+
 </Project>

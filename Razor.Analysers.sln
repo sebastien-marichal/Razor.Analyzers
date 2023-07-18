@@ -36,7 +36,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Roslyn", "Roslyn", "{699D66
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProjectLoader", "ProjectLoader\ProjectLoader.csproj", "{1C0590CB-1C8B-4CCF-AB7C-64A4D92D6C73}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProjectLoader.Template", "ProjectLoader.Template\ProjectLoader.Template.csproj", "{BCFB4CE3-45A5-4963-AA99-DB80CC359B3D}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Razor.Empty", "Razor.Empty\Razor.Empty.csproj", "{BCFB4CE3-45A5-4963-AA99-DB80CC359B3D}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Razor.Generator", "Razor.Generator\Razor.Generator.csproj", "{BF3F7E43-3FDC-458E-95EC-0FF55C7AB66A}"
 EndProject

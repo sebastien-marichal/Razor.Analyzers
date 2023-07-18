@@ -5,6 +5,7 @@ using System.Reflection;
 using Microsoft.Build.Locator;
 using Microsoft.CodeAnalysis.Diagnostics;
 using Microsoft.CodeAnalysis.MSBuild;
+using Razor.Analyzers.PoC;
 
 var map = new Dictionary<string, string>
           {
@@ -27,11 +28,12 @@ var map = new Dictionary<string, string>
         <input type=""checkbox"" @onchange=""CheckChanged"" />
         @checkedMessage
     </label>
-</p>"
+</p>
+"
               },
               {
                   "Event.razor.cs",
-                  @"namespace ProjectLoader.Template;
+                  @"namespace Razor.Empty;
 
                   public partial class Event
                   {
@@ -39,10 +41,12 @@ var map = new Dictionary<string, string>
                   private string? newHeading;
                   private string checkedMessage = ""Not changed yet"";
 
+                  public string Model { get; set; }  
                   private void UpdateHeading()
                   {
                   currentHeading = $""{newHeading}!!!"";
-              }
+                  Model = """";
+                  }
 
               private void CheckChanged()
               {
@@ -50,6 +54,13 @@ var map = new Dictionary<string, string>
           }
 }
 "
+              },
+              {
+                  "Other.cshtml",
+                  @"@{
+                  ViewData[""Title""] = ""Home Page"";
+                  ViewData.Model.Test = ""toto""; // Noncompliant: don't use Model
+              }"
               }
           };
 
@@ -58,15 +69,15 @@ MSBuildLocator.RegisterDefaults();
 using var workspace = MSBuildWorkspace.Create();
 workspace.WorkspaceFailed += (_, failure) => Console.WriteLine(failure.Diagnostic);
 
-var analyzers = GetAnalyzers();
+var analyzers = ImmutableArray.Create<DiagnosticAnalyzer>(new DoNotUseViewModelModel(), new DoNotUseViewModelModelStandAlone());
 
-const string root = "C:/src/work/Razor.Analyzers/ProjectLoader.Template/";
+const string root = "C:/src/work/Razor.Analyzers/Razor.Empty/";
 foreach (var pair in map)
 {
     File.WriteAllText(Path.Join(root, pair.Key), pair.Value);
 }
 
-var project = await workspace.OpenProjectAsync("C:/src/work/Razor.Analyzers/ProjectLoader.Template/ProjectLoader.Template.csproj");
+var project = await workspace.OpenProjectAsync("C:/src/work/Razor.Analyzers/Razor.Empty/Razor.Empty.csproj");
 var compilation = (await project.GetCompilationAsync()).WithAnalyzers(analyzers);
 var analyzerDiagnostics = await compilation.GetAnalyzerDiagnosticsAsync();
 var allDiagnostics = await compilation.GetAllDiagnosticsAsync();
