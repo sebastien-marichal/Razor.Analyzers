@@ -2,7 +2,6 @@
 using Microsoft.CodeAnalysis.CSharp;
 using Microsoft.CodeAnalysis.CSharp.Syntax;
 using Microsoft.CodeAnalysis.Diagnostics;
-using Microsoft.CodeAnalysis.Operations;
 
 namespace Razor.Analyzers.PoC;
 
@@ -13,19 +12,32 @@ public class DoNotUseViewModelModel : ViewFeatureAnalyzerBase
 
     private static readonly DiagnosticDescriptor Rule = new(DiagnosticId, "XXX", "{0}", "Razor", DiagnosticSeverity.Warning, true);
 
+    private const bool NormalizePahts = false;
+
     public DoNotUseViewModelModel() : base(Rule) { }
 
     protected override void InitializeWorker(ViewFeaturesAnalyzerContext analyzerContext)
     {
         analyzerContext.Context.RegisterSyntaxNodeAction(context =>
         {
-            if (context.Node is MemberAccessExpressionSyntax memberAccess
-                && memberAccess.Name.Identifier.ToString().Contains("Model"))
+            if (context.Node is InvocationExpressionSyntax invocation
+                && invocation.Expression is { } expression
+                && expression is IdentifierNameSyntax identifierName
+                && identifierName.Identifier.ValueText == "RaiseHere")
             {
-                context.ReportDiagnostic(Diagnostic.Create(
-                    SupportedDiagnostic,
-                    memberAccess.Name.Identifier.GetLocation(), memberAccess.Name.Identifier.ToString()));
+                var location = identifierName.Identifier.GetLocation();
+                var lineSpan = location.GetMappedLineSpan();
+                if (NormalizePahts)
+                {
+                    location = Location.Create(Path.GetFullPath(lineSpan.Path), location.SourceSpan, lineSpan.Span);
+                }
+                else
+                {
+                    location = Location.Create(lineSpan.Path, location.SourceSpan, lineSpan.Span);
+                }
+
+                context.ReportDiagnostic(Diagnostic.Create(Rule, location, $"Reported thanks to {location}"));
             }
-        }, SyntaxKind.SimpleMemberAccessExpression);
+        }, SyntaxKind.InvocationExpression);
     }
 }
